@@ -17,7 +17,7 @@ WORKDIR /app
 RUN git clone https://github.com/Tommycik/appTesi
 
 # Install dependencies (initial layer)
-RUN pip install --no-cache-dir -r requirements.txt
+RUN cd appTesi && pip install --no-cache-dir -r requirements.txt
 
 # Copy startup script
 COPY start.sh /start.sh

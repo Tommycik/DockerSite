@@ -1,6 +1,6 @@
 set -e
 
-cd /app
+cd /app/appTesi
 
 echo "Updating code from GitHub..."
 git reset --hard
