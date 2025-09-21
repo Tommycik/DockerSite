@@ -1,4 +1,4 @@
-version: "3.9"
+
 services:
   flux-app:
     image: tommycik/flux_site:latest
