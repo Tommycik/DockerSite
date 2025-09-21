@@ -1,5 +1,5 @@
 
-FROM python:3.11-slim
+FROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -15,9 +15,10 @@ WORKDIR /app
 
 # Clone your repo (replace with your repo URL)
 RUN git clone https://github.com/Tommycik/appTesi
-
+RUN pip install --upgrade pip setuptools wheel
 # Install dependencies (initial layer)
-RUN cd appTesi && pip install --no-cache-dir -r requirements.txt
+RUN cd appTesi && cat requirements.txt &&\
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy startup script
 COPY start.sh /start.sh
